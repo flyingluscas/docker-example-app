@@ -1,0 +1,21 @@
+version: '2'
+
+services:
+  mongo:
+    image: mongo:4.2
+    container_name: mongo
+    environment:
+      MONGO_INITDB_DATABASE: docker-example-app
+    expose:
+      - 27017
+
+  api:
+    build: .
+    container_name: api
+    volumes:
+      - ./src:/app/src
+      - ./package.json:/app/package.json
+    ports:
+      - 3000:3000
+    links:
+      - mongo
