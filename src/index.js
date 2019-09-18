@@ -17,9 +17,13 @@ router.get('/messages', async (ctx) => {
 })
 
 router.post('/messages', async (ctx) => {
+  console.log('Creating new message...')
+
   const message = await Message.create({
     text: ctx.request.body.message,
   })
+
+  console.log('New message create')
 
   ctx.status = 200
   ctx.body = {
