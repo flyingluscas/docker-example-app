@@ -6,6 +6,6 @@
     "koa": "2.8.1",
     "koa-bodyparser": "4.2.1",
     "koa-router": "7.4.0",
-    "mongoose": "5.7.1"
+    "mongoose": "5.7.8"
   }
 }
